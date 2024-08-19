@@ -26,7 +26,7 @@ int main() {
   gpio_set_dir(LED_PIN_4, GPIO_OUT);
   gpio_set_dir(BTN_PIN, GPIO_IN);
 
-  gpio_pull_up(BTN_PIN_1);
+  gpio_pull_up(BTN_PIN);
 
   while (true) {
     if (!gpio_get(BTN_PIN)) {
