@@ -25,11 +25,15 @@ int main() {
   gpio_set_dir(LED_PIN2, GPIO_OUT);
 
   while (true) {
-    if (!gpio_get(BTN_PIN1)) {
-      gpio_put(LED_PIN1, 1);
-    }
-    if (!gpio_get(BTN_PIN2)) {
-      gpio_put(LED_PIN2, 1);
+    int luz = gpio_get(LED_PIN_R);
+    gpio_put(LED_PIN_R, !luz);
+    sleep_ms(50);
+    while (!gpio_get(BTN_PIN_R)) {
+    };
+    int luz2 = gpio_get(LED_PIN_G);
+    gpio_put(LED_PIN_G, !luz2);
+    sleep_ms(50);
+    while (!gpio_get(BTN_PIN_G)) {
     }
   }
 }
